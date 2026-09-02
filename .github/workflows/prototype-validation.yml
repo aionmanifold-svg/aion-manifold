@@ -1,0 +1,9 @@
+name: Prototype Validation
+on: [push,pull_request]
+jobs:
+  docs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: test -f docs/governance/authorization-gate.md
+      - run: test -f docs/audit/events/evt_0001.json
